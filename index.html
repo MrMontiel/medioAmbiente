@@ -15,16 +15,15 @@
     <!-- Fuentes -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Rubik:wght@600;700&display=swap"
-      rel="stylesheet"
-    />
-    <script src="./js/main.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@600;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <title>El medio ambiente</title>
   </head>
   <body>
     <header class="header" id="header">
       <div class="contentNav">
+        <input type="checkbox" name="check" id="btnM">
+        <label for="btnM" class="btnHamb"  onclick="collapse()"><i class='bx bx-menu'></i></label>
         <div class="logo">
           <img src="./img/earth-outline 1.svg" alt="" class="tierra" />
           <img src="./img/El Medio Ambiente.svg" alt="" class="medioAmbiente" />
@@ -34,24 +33,8 @@
             <a class="btn active" href="/#que-es">Qué es</a>
             <a class="btn" href="/#caracteristicas">Características</a>
             <a class="btn" href="https://responsabilidadsocial.net/medio-ambiente-que-es-definicion-caracteristicas-cuidado-y-carteles/" target="_blank">Enlaces de interes</a>
-            <a class="btn" href="/#ejercicios">Ejercicios tabla</a>
+            <a class="btn" href="/#ejercicios" onclick="showSnackbar('¡Está observando un Snackbar!')">Mostrar Snackbar</a>
           </div>
-          <a href="#" class="btnHam">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="ionicon"
-              viewBox="0 0 512 512">
-              <title>Menu</title>
-              <path
-                fill="none"
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-miterlimit="10"
-                stroke-width="32"
-                d="M80 160h352M80 256h352M80 352h352"
-              />
-            </svg>
-          </a>
         </div>
       </div>
     </header>
@@ -87,7 +70,7 @@
             <h1>Características del medio ambiente</h1>
             <div class="collapsedDiv">
               <div class="contentCollap">
-                <input type="radio" name="collapse" id="organismos" />
+                <input type="checkbox" name="collapse" id="organismos" />
                 <label for="organismos" class="collapsible">Organismos</label>
                 <div class="content">
                     <p>
@@ -97,7 +80,7 @@
                 </div>
               </div>
               <div class="contentCollap">
-                <input type="radio" name="collapse" id="agua" />
+                <input type="checkbox" name="collapse" id="agua" />
                 <label for="agua" class="collapsible">Agua</label>
                 <div class="content">
                     <p>
@@ -108,7 +91,7 @@
                 </div>
               </div>
               <div class="contentCollap">
-                <input type="radio" name="collapse" id="aire" />
+                <input type="checkbox" name="collapse" id="aire" />
                 <label for="aire" class="collapsible">Aire</label>
                 <div class="content">
                     <p>
@@ -119,7 +102,7 @@
                 </div>
               </div>
               <div class="contentCollap">
-                <input type="radio" name="collapse" id="temperatura" />
+                <input type="checkbox" name="collapse" id="temperatura" />
                 <label for="temperatura" class="collapsible">Temperatura</label>
                 <div class="content">
                     <p>
@@ -131,7 +114,7 @@
                 </div>
               </div>
               <div class="contentCollap">
-                <input type="radio" name="collapse" id="accidentesGeo" />
+                <input type="checkbox" name="collapse" id="accidentesGeo" />
                 <label for="accidentesGeo" class="collapsible">Accidentes Geográficos</label>
                 <div class="content">
                     <p>
@@ -141,7 +124,7 @@
                 </div>
               </div>
               <div class="contentCollap">
-                <input type="radio" name="collapse" id="organismosViv" />
+                <input type="checkbox" name="collapse" id="organismosViv" />
                 <label for="organismosViv" class="collapsible">Organismos Vivos</label>
                 <div class="content">
                     <p>
@@ -174,6 +157,7 @@
             </svg>
         </div>
     </div>
+    <div id="snackbar"></div>
     <footer>
         <div class="contentFooter">
             <ul>
@@ -232,6 +216,25 @@
         const topFuction = ()=>{
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
+        }
+
+
+        let quees = document.getElementById("que-es");
+        const collapse = ()=>{
+          if(quees.style.marginTop === "350px"){
+            quees.style.marginTop = "0";
+          }else{
+            quees.style.marginTop = "350px";
+          }
+        } 
+
+        let snackbar = document.getElementById('snackbar');
+        const showSnackbar = (msg) =>{
+          snackbar.innerHTML = msg;
+          snackbar.classList.add('show');
+          setTimeout(() => {
+            snackbar.classList.remove('show')
+          }, 3000)
         }
     </script>
   </body>
