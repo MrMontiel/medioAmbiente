@@ -1,0 +1,346 @@
+:root{
+    --parrafos: 17px;
+    --titulos: 30px;
+    --subtitulo: 20px;
+    --subFooter: 16px;
+
+    --parrafos-Mb:16px;
+    --titulos-Mb: 23px;
+    --subFooter-Mb: 15px;
+
+    --azul: #1946B9;
+    --negro: #1B2430;
+    --gris:#717171;
+    --blanco: #ffffff;
+
+    --font-parrafos: "Satoshi-Medium";
+    --font-footer: "Satoshi-Regular";
+    --font-titulos: 'Rubik', sans-serif;
+}
+
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: var(--blanco);
+}
+
+/* Header */
+
+.header{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contentNav{
+    width: 100%;
+}
+
+.logo{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar{
+    width: 100%;
+    height: 60px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--blanco);
+
+}
+
+.contentNavbar{
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
+
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contentNavbar a{
+    text-decoration: none;
+    font-family: var(--font-parrafos);
+    color: var(--gris);
+}
+
+.contentNavbar a:hover{
+    color: var(--negro);
+}
+
+.contentNavbar .active{
+    color: var(--negro);
+}
+
+.navbar button svg{
+    width: 35px;
+}
+.btnHam{
+    display: none;
+}
+
+/* Main */
+
+#main{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Section que-es */
+.que-es, .caracteristicas{
+    margin: 60px 0px;
+}
+
+.img{
+    width: 432px;
+    height: 400px;
+    background: url("../img/pexels-fermin-rodriguez-penelas-13221938.jpg");
+    background-position: center;
+    background-size: 100%;
+    object-fit: cover;
+}
+
+.contentQuees{
+    display: flex;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+.infoText{
+    width: 500px;
+    margin-left: 30px;
+}
+
+.infoText h1{
+    font-family: var(--font-titulos);
+    font-size: var(--titulos);
+    font-weight: 700;
+    color: var(--negro);
+    margin-bottom: 30px;
+}
+
+.infoText p{
+    font-family: var(--font-parrafos);
+    font-size: var(--parrafos);
+}
+
+/* Caracteristicas */
+.contentCaracteristicas{
+    display: flex;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+.caract{
+    margin-right: 20px;
+}
+
+.caract h1{
+    font-family: var(--font-titulos);
+    font-size: var(--titulos);
+    font-weight: 700;
+    color: var(--negro);
+    margin-bottom: 30px;
+}
+.contentCollap{
+    border: 0.5px solid rgba(0, 0, 0, 0.42);
+    margin-bottom: 7px;
+}
+.collapsible{
+    width: 100%;
+    background: var(--blanco);
+    box-sizing: border-box;
+    padding: 0 20px;
+    cursor: pointer;
+
+    height: 45px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    font-size: var(--subFooter);
+    font-family: var(--font-titulos);
+    color: var(--negro);
+    margin-bottom: 7px;
+    position: relative;
+}
+
+.collapsible::after{
+    content: "";
+    position: absolute;
+    right: 20px;
+    transform: rotateY(-50%);
+    width: 22px;
+    height: 20px;
+    background: url("../img/chevron-down-outline 1.svg");
+    background-size: contain;
+    transition: transform 0.4s;
+}
+.contentCollap input{
+    display: none;
+}
+.content {
+    padding: 20px 18px;
+    display: none;
+    overflow: hidden;
+    background-color: var(--blanco);
+    font-family: var(--font-parrafos);
+    font-size: var(--parrafos);
+}
+
+.contentCollap input:checked ~ .content{
+    display: block;
+}
+
+/* btnTop */
+
+.btnTops{
+    cursor: pointer;
+}
+
+.btntop{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--blanco);
+    box-shadow: -2px 4px 26px rgba(0, 0, 0, 0.28);
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.btntop svg{
+    width: 24px;
+    height: 24px;
+    fill: none;
+}
+
+.btntop svg path{
+    stroke: var(--azul);
+}
+/* Footer */
+footer{
+    width: 100%;
+    height: 100px;
+    background-color: var(--blanco);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+.contentFooter ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.contentFooter ul li{
+    margin: 0 10px;
+}
+
+.contentFooter p{
+    font-family: var(--font-footer);
+    font-size: var(--subFooter-Mb);
+}
+
+@media screen and (max-width:920px){
+    .contentQuees{
+        flex-direction: column;
+    }
+
+    .img{
+        width: 100%;
+        height: 350px;
+        margin-bottom: 30px;
+    }
+
+    .infoText{
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .contentCaracteristicas{
+        flex-direction: column-reverse;
+    }
+
+    .contentCaracteristicas .video{
+        margin-bottom: 30px;
+    }
+
+    .contentCaracteristicas .video iframe{
+        width: 100%;
+        
+    }
+    .caract{
+        margin-right: 0;
+    }
+
+    .btntop{
+        bottom: 70px;
+    }
+}
+
+
+@media screen and (max-width: 600px){
+    .contentNavbar, .medioAmbiente{
+        display: none;
+    }
+
+    .btnHam{
+        display: block;
+    }
+
+    .contentNav{
+        height: 90px;
+        display: flex;
+        margin: 0 20px;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo{
+        height: 100%;
+    }
+
+    .logo img {
+        width: 50px;
+    }
+
+    .navbar{
+        width: 45px;
+    }
+
+    .navbar a{
+        color: #1B2430;
+    }
+
+    .infoText h1, .caract h1{
+        font-size: var(--titulos-Mb);
+    }
+
+    .contentCaracteristicas .video iframe{
+        height: 300px;
+    }
+}
