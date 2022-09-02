@@ -1,14 +1,42 @@
-let coll = document.getElementsByClassName("collapsible");
-let i;
+let contentNav = document.getElementById("contentNavbar");
+let btns = contentNav.getElementsByClassName("btn");
 
-for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        let content = this.nextElementSibling;
-        if (content.style.display === "block") {
-            content.style.display = "none";
-        } else {
-            content.style.display = "block";
-        }
-    });
+for (let i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function () {
+    let current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
 }
+
+const btnTop = document.getElementById("btn");
+
+window.onscroll = () => {
+  scrollFunction();
+};
+
+const scrollFunction = () => {
+  if (
+    document.body.scrollTop > 10 ||
+    document.documentElement.scrollTop > 10
+  ) {
+    btnTop.style.display = "flex";
+  } else {
+    btnTop.style.display = "none";
+  }
+};
+
+const topFuction = () => {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+};
+
+
+let snackbar = document.getElementById("snackbar");
+const showSnackbar = (msg) => {
+  snackbar.innerHTML = msg;
+  snackbar.classList.add("show");
+  setTimeout(() => {
+    snackbar.classList.remove("show");
+  }, 3000);
+};

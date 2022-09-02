@@ -29,9 +29,7 @@
     <header class="header" id="header">
       <div class="contentNav">
         <input type="checkbox" name="check" id="btnM" />
-        <label for="btnM" class="btnHamb" onclick="collapse()"
-          ><i class="bx bx-menu"></i
-        ></label>
+        <label for="btnM" class="btnHamb"><i class="bx bx-menu"></i></label>
         <div class="logo">
           <img src="./img/earth-outline 1.svg" alt="" class="tierra" />
           <img src="./img/El Medio Ambiente.svg" alt="" class="medioAmbiente" />
@@ -249,57 +247,6 @@
         <p>Rediseñada y Desarrollada por Luis Montiel</p>
       </div>
     </footer>
-    <script>
-      let contentNav = document.getElementById("contentNavbar");
-      let btns = contentNav.getElementsByClassName("btn");
-
-      for (let i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function () {
-          let current = document.getElementsByClassName("active");
-          current[0].className = current[0].className.replace(" active", "");
-          this.className += " active";
-        });
-      }
-
-      const btnTop = document.getElementById("btn");
-
-      window.onscroll = () => {
-        scrollFunction();
-      };
-
-      const scrollFunction = () => {
-        if (
-          document.body.scrollTop > 10 ||
-          document.documentElement.scrollTop > 10
-        ) {
-          btnTop.style.display = "flex";
-        } else {
-          btnTop.style.display = "none";
-        }
-      };
-
-      const topFuction = () => {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-      };
-
-      let quees = document.getElementById("que-es");
-      const collapse = () => {
-        if (quees.style.marginTop === "350px") {
-          quees.style.marginTop = "0";
-        } else {
-          quees.style.marginTop = "350px";
-        }
-      };
-
-      let snackbar = document.getElementById("snackbar");
-      const showSnackbar = (msg) => {
-        snackbar.innerHTML = msg;
-        snackbar.classList.add("show");
-        setTimeout(() => {
-          snackbar.classList.remove("show");
-        }, 3000);
-      };
-    </script>
+    <script src="./js/main.js"></script>
   </body>
 </html>
